@@ -77,7 +77,7 @@ class Conexion {
         try{
             if (!conexion.isClosed()){
                 ResultSet rs = st.executeQuery(instruccion); //Ejecuta el query de SQL
-                if(!rs.next()){
+                if(rs == null){
                     System.out.println("No hay resultados que coincidan con la búsqueda.");
                     return null;
                 }
