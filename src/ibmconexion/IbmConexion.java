@@ -20,7 +20,7 @@ public class IbmConexion {
         Conexion c = new Conexion("db2admin","123456","192.168.1.69",50000,"equipo7");
         //Conexion_java cj = new Conexion_java("192.168.1.69", "root", "", "equipo7");
         int i = 0;
-        ResultSet rs = c.buscar("SELECT * FROM ciudad");
+        ResultSet rs = c.buscar("SELECT * FROM BD.ciudad");
         //System.out.println(""+i);
         /*
         while(i < 5){
