@@ -22,12 +22,12 @@ public class IbmConexion {
         //Conexion a DB2
         Conexion c = new Conexion("db2admin","123456","192.168.1.69",50000,"equipo7");
         //Conexion a mySQL
-        Conexion_java cj = new Conexion_java("127.0.0.1", "root", "", "equipo7");
+        Conexion_java cj = new Conexion_java("localhost", "root", "", "equipo7");
         
         //Populate the DB2 TABLE
         int i = 1;        
         while(i <= 5){
-            if(c.insertar("INSERT INTO BD.ciudad(ciudad.idCiudad,ciudad.nombre) VALUES("+i+",Ciudad"+i+")")){
+            if(c.insertar("INSERT INTO BD.ciudad(BD.ciudad.idCiudad,BD.ciudad.nombre) VALUES ('"+i+"','Ciudad"+i+"')")){
                 System.out.println(":)");
             }
             i++;
@@ -40,7 +40,7 @@ public class IbmConexion {
         Random r = new Random();
         while(i <= 10){
             int random = getRandom(1,5,r);
-            if(c.insertar("INSERT INTO alumno(idAlumno,nombre,idCiudad) VALUES("+i+",Alumno"+i+",Ciudad"+random+")")){
+            if(c.insertar("INSERT INTO alumno(idAlumno,nombre,idCiudad) VALUES('"+i+"','Alumno"+i+"','Ciudad"+random+"')")){
                 System.out.println(":)");
             }
             i++;
